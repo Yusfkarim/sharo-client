@@ -71,12 +71,22 @@ class _SharoMainScreenState extends State<SharoMainScreen> {
     "دەربەندیخان - گەڕەکی هۆنراوە",
   ];
 
-  // Large, high-end categories with modern vector icons and rich gradients
+  // Visual Category Tiles with Real Photography and Vivid Gradients
   final List<Map<String, dynamic>> categories = [
+    {
+      "id": "market",
+      "name": "شاڕۆ کڕین",
+      "sub": "مارکێت و بازاڕ",
+      "image": "assets/images/cat_market.jpg",
+      "tag": "فرێش",
+      "gradient": const [Color(0xFF059669), Color(0xFF10B981)],
+      "bgLight": const Color(0xFFECFDF5),
+    },
     {
       "id": "food",
       "name": "چێشتخانە و کەباب",
-      "icon": Icons.restaurant_rounded,
+      "sub": "خواردنی گەرم",
+      "image": "assets/images/cat_kebab.jpg",
       "tag": "گەرم",
       "gradient": const [Color(0xFFFF5A36), Color(0xFFFF8E53)],
       "bgLight": const Color(0xFFFFF1EE),
@@ -84,62 +94,95 @@ class _SharoMainScreenState extends State<SharoMainScreen> {
     {
       "id": "fish",
       "name": "ماسی بەنداو",
-      "icon": Icons.set_meal_rounded,
-      "tag": "فرێش",
+      "sub": "ڕاوکراوی فرێش",
+      "image": "assets/images/cat_fish.jpg",
+      "tag": "تایبەت",
       "gradient": const [Color(0xFF0284C7), Color(0xFF38BDF8)],
       "bgLight": const Color(0xFFF0F9FF),
     },
     {
       "id": "burger",
       "name": "برگر و فاست فوود",
-      "icon": Icons.lunch_dining_rounded,
-      "tag": "تایبەت",
+      "sub": "پیتزا و برگر",
+      "image": "assets/images/cat_burger.jpg",
+      "tag": "خێرا",
       "gradient": const [Color(0xFFEA580C), Color(0xFFFBA919)],
       "bgLight": const Color(0xFFFFF7ED),
     },
     {
-      "id": "market",
-      "name": "شاڕۆ مارکێت",
-      "icon": Icons.local_grocery_store_rounded,
-      "tag": "ڕۆژانە",
-      "gradient": const [Color(0xFF059669), Color(0xFF34D399)],
-      "bgLight": const Color(0xFFECFDF5),
+      "id": "sweets",
+      "name": "شیرینی و کێک",
+      "sub": "باقڵاوە و کێک",
+      "image": "assets/images/cat_sweets.jpg",
+      "tag": "شیرین",
+      "gradient": const [Color(0xFF9333EA), Color(0xFFC084FC)],
+      "bgLight": const Color(0xFFFAF5FF),
     },
     {
       "id": "ride",
       "name": "شاڕۆ تەکسی",
-      "icon": Icons.local_taxi_rounded,
+      "sub": "تەکسی بەنداو",
+      "image": "assets/images/cat_taxi.jpg",
       "tag": "٢٤ کاتژمێر",
       "gradient": const [Color(0xFFD97706), Color(0xFFFBBF24)],
       "bgLight": const Color(0xFFFEFCE8),
     },
     {
-      "id": "sweets",
-      "name": "شیرینی و کێک",
-      "icon": Icons.cake_rounded,
-      "tag": "بەستەنی",
-      "gradient": const [Color(0xFF9333EA), Color(0xFFC084FC)],
-      "bgLight": const Color(0xFFFAF5FF),
-    },
-    {
       "id": "cargo",
       "name": "بارهەڵگر و بار",
-      "icon": Icons.local_shipping_rounded,
-      "tag": "خێرا",
+      "sub": "گواستنەوەی کەلوپەل",
+      "image": "assets/images/cat_cargo.jpg",
+      "tag": "ئەمانەت",
       "gradient": const [Color(0xFF475569), Color(0xFF94A3B8)],
       "bgLight": const Color(0xFFF8FAFC),
     },
     {
       "id": "prizes",
       "name": "خەڵات و دیاری",
-      "icon": Icons.card_giftcard_rounded,
-      "tag": "داشکاندن",
+      "sub": "داشکاندن و خەڵات",
+      "image": "assets/images/cat_gift.jpg",
+      "tag": "پاداشت",
       "gradient": const [Color(0xFFE11D48), Color(0xFFFB7185)],
       "bgLight": const Color(0xFFFFF1F2),
     },
   ];
 
+  // Visual Shops with Real Banners and Real Product Thumbnails
   final List<Map<String, dynamic>> shops = [
+    {
+      "id": "shop-market-1",
+      "name": "شاڕۆ کڕین - سوپەرمارکێتی دەربەندیخان",
+      "category": "market",
+      "rating": 4.95,
+      "reviews": 2100,
+      "eta": "10-20",
+      "fee": 1000,
+      "location": "دەربەندیخان - ناو بازاڕ",
+      "featuredTag": "کەرەستەی خۆراکی و پێداویستی ڕۆژانە",
+      "banner": "assets/images/shop_market_banner.jpg",
+      "menu": [
+        {"id": "m_g1", "name": "سەبەتەی پێداویستی خۆراکی تەواو", "desc": "پاقلەمەنی، دۆشاوی تەماتە، زەیت، شەکر، چا و ئارد", "price": 18000, "image": "assets/images/item_grocery_box.jpg"},
+        {"id": "m_g2", "name": "برنجی کوردی پلە یەک (٥ کگم)", "desc": "برنجی کوردی خەست و ڕۆنی حەیوانی مەحلی", "price": 14000, "image": "assets/images/item_rice_staples.jpg"},
+        {"id": "m_g3", "name": "ماست و پەنیر و شیرەمەنی خۆماڵی", "desc": "ماستی مەڕی دەربەندیخان بە تامی سروشتی و پەنیر", "price": 6000, "image": "assets/images/item_dairy.jpg"},
+        {"id": "m_g4", "name": "شەربەت و مەستاو و خواردنەوەی فرێش", "desc": "شەربەتی میوەی فرێش و دۆوی خۆماڵی تەزیو", "price": 3000, "image": "assets/images/item_drinks.jpg"},
+      ]
+    },
+    {
+      "id": "shop-market-2",
+      "name": "شاڕۆ کڕین - میوە و سەوزەی بەنداو",
+      "category": "market",
+      "rating": 4.92,
+      "reviews": 1140,
+      "eta": "10-15",
+      "fee": 500,
+      "location": "دەربەندیخان - شەقامی گشتی بەنداو",
+      "featuredTag": "میوە و سەوزەی فرێشی باخەکان",
+      "banner": "assets/images/shop_grocery_fresh.jpg",
+      "menu": [
+        {"id": "m_f1", "name": "سەبەتەی میوەی وەرزی فرێش (٥ کگم)", "desc": "سێو، مۆز، پرتەقاڵ و ترێی پاککراوە و کوالیتی بەرز", "price": 11000, "image": "assets/images/item_fruits.jpg"},
+        {"id": "m_f2", "name": "سەوزەی تازەی باخەکانی دەربەندیخان", "desc": "خەیار، تەماتە، بیبەر، کەرەوز و تەڕەتیزەی باخەکان", "price": 4500, "image": "assets/images/item_grocery_box.jpg"},
+      ]
+    },
     {
       "id": "shop-1",
       "name": "چێشتخانەی کەیف (دەربەندیخان)",
@@ -150,11 +193,11 @@ class _SharoMainScreenState extends State<SharoMainScreen> {
       "fee": 0,
       "location": "دەربەندیخان - شەقامی گشتی",
       "featuredTag": "گەیاندن لە دەربەندیخان خۆڕاییە",
-      "icon": Icons.restaurant,
+      "banner": "assets/images/shop_kebab_banner.jpg",
       "menu": [
-        {"id": "m1", "name": "کەبابی تایبەتی دەربەندیخان", "desc": "سێ شیش کەبابی بەرخی فرێش بە نانی تیری و تەماتە و بیبەر", "price": 9500, "icon": Icons.kebab_dining},
-        {"id": "m2", "name": "قۆزی بەرخی کوردی بە برنج", "desc": "گۆشتی نەرمی کوڵاو بە برنجی کوردی و شلەی پاقلە", "price": 14000, "icon": Icons.dinner_dining},
-        {"id": "m3", "name": "شیش تاووقی مەریەنەتکراو", "desc": "سنگی مریشکی برژاو لەسەر خەڵووز بە سۆسی تایبەت", "price": 8500, "icon": Icons.restaurant_menu},
+        {"id": "m1", "name": "کەبابی تایبەتی دەربەندیخان", "desc": "سێ شیش کەبابی بەرخی فرێش بە نانی تیری و تەماتە و بیبەر", "price": 9500, "image": "assets/images/dish_kebab.jpg"},
+        {"id": "m2", "name": "قۆزی بەرخی کوردی بە برنج", "desc": "گۆشتی نەرمی کوڵاو بە برنجی کوردی و شلەی پاقلە", "price": 14000, "image": "assets/images/dish_qozy.jpg"},
+        {"id": "m3", "name": "شیش تاووقی مەریەنەتکراو", "desc": "سنگی مریشکی برژاو لەسەر خەڵووز بە سۆسی تایبەت", "price": 8500, "image": "assets/images/dish_tikka.jpg"},
       ]
     },
     {
@@ -167,10 +210,10 @@ class _SharoMainScreenState extends State<SharoMainScreen> {
       "fee": 1000,
       "location": "دەربەندیخان - نزیک بەنداو",
       "featuredTag": "ماسی فرێشی ڕاوکراوی بەنداو",
-      "icon": Icons.set_meal,
+      "banner": "assets/images/shop_fish_banner.jpg",
       "menu": [
-        {"id": "m4", "name": "ماسی مسکۆفی گەورە لەسەر خەڵووز", "desc": "ماسی گەورەی دەربەندیخان بە سۆسی نارنج و بەهاراتی کوردی", "price": 18000, "icon": Icons.set_meal},
-        {"id": "m5", "name": "ماسی سوورکراوەی بەنداو", "desc": "ماسی فرێش بە پەتاتە، ترشیاتی خۆماڵی و نانی گەرم", "price": 15000, "icon": Icons.set_meal},
+        {"id": "m4", "name": "ماسی مسکۆفی گەورە لەسەر خەڵووز", "desc": "ماسی گەورەی دەربەندیخان بە سۆسی نارنج و بەهاراتی کوردی", "price": 18000, "image": "assets/images/dish_masi_tanoor.jpg"},
+        {"id": "m5", "name": "ماسی سوورکراوەی بەنداو", "desc": "ماسی فرێش بە پەتاتە، ترشیاتی خۆماڵی و نانی گەرم", "price": 15000, "image": "assets/images/dish_fish_fillet.jpg"},
       ]
     },
     {
@@ -183,28 +226,27 @@ class _SharoMainScreenState extends State<SharoMainScreen> {
       "fee": 1000,
       "location": "دەربەندیخان - گەڕەکی سەرسیر",
       "featuredTag": "فست فوودی تایبەتی شاڕۆ",
-      "icon": Icons.lunch_dining,
+      "banner": "assets/images/shop_burger_banner.jpg",
       "menu": [
-        {"id": "m6", "name": "دەبڵ سمەش برگر شاڕۆ", "desc": "دوو پەتی گۆشتی ئاڵۆزکراو بە پەنیر چیدەر و سۆسی تایبەت", "price": 8000, "icon": Icons.lunch_dining},
-        {"id": "m7", "name": "کریسبی چیکن سوپریم", "desc": "سنگی کریسپی سوورکراوە بە کۆڵسڵۆ و فنگەر", "price": 7500, "icon": Icons.fastfood},
+        {"id": "m6", "name": "دەبڵ سمەش برگر شاڕۆ", "desc": "دوو پەتی گۆشتی ئاڵۆزکراو بە پەنیر چیدەر و سۆسی تایبەت", "price": 8000, "image": "assets/images/dish_smash_burger.jpg"},
+        {"id": "m7", "name": "کریسبی چیکن سوپریم", "desc": "سنگی کریسپی سوورکراوە بە کۆڵسڵۆ و فنگەر", "price": 7500, "image": "assets/images/dish_crispy_chicken.jpg"},
       ]
     },
     {
-      "id": "shop-4",
-      "name": "شاڕۆ مارکێتی دەربەندیخان",
-      "category": "market",
-      "rating": 4.95,
-      "reviews": 2100,
-      "eta": "10-20",
+      "id": "shop-6",
+      "name": "شیرینی و کێکی شاڕۆ",
+      "category": "sweets",
+      "rating": 4.88,
+      "reviews": 760,
+      "eta": "15-25",
       "fee": 1000,
-      "location": "دەربەندیخان - سەنتەری شار",
-      "featuredTag": "کەرەستەی خۆراکی و میوەی فرێش",
-      "icon": Icons.local_grocery_store,
+      "location": "دەربەندیخان - گەڕەکی بیرکێ",
+      "featuredTag": "شیرینی و بەستەنی فرێش",
+      "banner": "assets/images/cat_sweets.jpg",
       "menu": [
-        {"id": "m8", "name": "سەبەتەی میوەی وەرزی فرێش (٥ کگم)", "desc": "سێو، مۆز، پرتەقاڵ، و ترێ بە کوالیتی پلە یەک", "price": 11000, "icon": Icons.shopping_basket},
-        {"id": "m9", "name": "ماست و پەنیر و شیرەمەنی خۆماڵی", "desc": "بەرهەمی سپیایی سروشتی و فرێش", "price": 6000, "icon": Icons.egg},
+        {"id": "m14", "name": "باقڵاوەی فستقی تایبەت (١ کگم)", "desc": "باقڵاوەی مەحلی گەرم بە فستق و شیلەی خۆماڵی", "price": 12000, "image": "assets/images/item_sweets_baklava.jpg"},
       ]
-    }
+    },
   ];
 
   @override
@@ -588,7 +630,7 @@ class _SharoMainScreenState extends State<SharoMainScreen> {
                   child: TextField(
                     onChanged: (val) => setState(() => searchQuery = val),
                     decoration: const InputDecoration(
-                      hintText: 'گەڕان لەناو چێشتخانە و مارکێتەکانی دەربەندیخان...',
+                      hintText: 'گەڕان لەناو شاڕۆ کڕین، مارکێت و چێشتخانەکان...',
                       hintStyle: TextStyle(fontSize: 12, color: Colors.grey),
                       border: InputBorder.none,
                       icon: Icon(Icons.search, color: Color(0xFFFF5A36)),
@@ -597,21 +639,30 @@ class _SharoMainScreenState extends State<SharoMainScreen> {
                 ),
                 const SizedBox(height: 18),
 
-                // Promotional Banners for Darbandikhan
+                // Promotional Banners with Real High-Resolution Photography
                 SizedBox(
-                  height: 145,
+                  height: 150,
                   child: PageView(
                     children: [
                       _buildPromoCard(
+                        title: "شاڕۆ کڕین: بازاڕی دەربەندیخان لە گیرفانتدا",
+                        desc: "سەوزە، میوە و پێداویستی ڕۆژانە بە گەیاندنی فرێش",
+                        badge: "شاڕۆ کڕین",
+                        image: "assets/images/banner_promo_3.jpg",
+                        gradient: [const Color(0xFF059669), const Color(0xFF10B981)],
+                      ),
+                      _buildPromoCard(
                         title: "ماسی فرێشی بەنداوی دەربەندیخان!",
-                        desc: "ڕاستەوخۆ لە بەنداوەوە بە گەرمی دەگاتە بەردەم ماڵت",
-                        icon: Icons.set_meal,
-                        gradient: [const Color(0xFF0369A1), const Color(0xFF0284C7)],
+                        desc: "ڕاستەوخۆ لە بەنداوەوە بە کەمتر لە ۲۵ خولەک دەگاتە بەردەم ماڵت",
+                        badge: "ماسی بەنداو",
+                        image: "assets/images/banner_promo_2.jpg",
+                        gradient: [const Color(0xFF0284C7), const Color(0xFF38BDF8)],
                       ),
                       _buildPromoCard(
                         title: "کۆدی داشکاندنی دەربەندیخان: SHARO2026",
                         desc: "بڕی ۳,۰۰۰ د.ع داشکاندن لەسەر هەر داواکارییەک",
-                        icon: Icons.local_offer,
+                        badge: "داشکاندن",
+                        image: "assets/images/banner_promo_1.jpg",
                         gradient: [const Color(0xFFFF5A36), const Color(0xFFFF8E53)],
                       ),
                     ],
@@ -619,7 +670,7 @@ class _SharoMainScreenState extends State<SharoMainScreen> {
                 ),
                 const SizedBox(height: 20),
 
-                // Large, Beautiful, Prominent Category Tiles
+                // Category Header
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -633,16 +684,16 @@ class _SharoMainScreenState extends State<SharoMainScreen> {
                 ),
                 const SizedBox(height: 12),
 
-                // High-End Prominent Category Grid (2 rows x 4 columns)
+                // Visual Category Grid with Real Photos & Vivid Badges
                 GridView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   itemCount: categories.length,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4,
-                    childAspectRatio: 0.82,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 12,
+                    childAspectRatio: 0.74,
+                    crossAxisSpacing: 8,
+                    mainAxisSpacing: 10,
                   ),
                   itemBuilder: (context, idx) {
                     final cat = categories[idx];
@@ -656,17 +707,17 @@ class _SharoMainScreenState extends State<SharoMainScreen> {
                         });
                       },
                       child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
+                        padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 6),
                         decoration: BoxDecoration(
                           color: isSelected ? const Color(0xFFFFF1EE) : Colors.white,
                           borderRadius: BorderRadius.circular(18),
                           border: Border.all(
                             color: isSelected ? const Color(0xFFFF5A36) : Colors.grey.shade200,
-                            width: isSelected ? 1.8 : 1,
+                            width: isSelected ? 2 : 1,
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: isSelected ? const Color(0xFFFF5A36).withOpacity(0.12) : Colors.black.withOpacity(0.02),
+                              color: isSelected ? const Color(0xFFFF5A36).withOpacity(0.18) : Colors.black.withOpacity(0.03),
                               blurRadius: 8,
                               offset: const Offset(0, 3),
                             ),
@@ -675,43 +726,61 @@ class _SharoMainScreenState extends State<SharoMainScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Container(
-                              width: 52,
-                              height: 52,
-                              decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                  colors: gradient,
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight,
-                                ),
-                                borderRadius: BorderRadius.circular(16),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: gradient[0].withOpacity(0.35),
-                                    blurRadius: 10,
-                                    offset: const Offset(0, 4),
+                            Stack(
+                              clipBehavior: Clip.none,
+                              children: [
+                                Container(
+                                  width: 54,
+                                  height: 54,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(15),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: gradient[0].withOpacity(0.3),
+                                        blurRadius: 6,
+                                        offset: const Offset(0, 3),
+                                      ),
+                                    ],
                                   ),
-                                ],
-                              ),
-                              child: Center(
-                                child: Icon(
-                                  cat['icon'] as IconData,
-                                  color: Colors.white,
-                                  size: 28,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(15),
+                                    child: Image.asset(
+                                      cat['image'] as String,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
                                 ),
-                              ),
+                                Positioned(
+                                  top: -4,
+                                  right: -4,
+                                  child: Container(
+                                    padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+                                    decoration: BoxDecoration(
+                                      gradient: LinearGradient(colors: gradient),
+                                      borderRadius: BorderRadius.circular(8),
+                                      boxShadow: [
+                                        BoxShadow(color: Colors.black.withOpacity(0.2), blurRadius: 4),
+                                      ],
+                                    ),
+                                    child: Text(
+                                      cat['tag'] as String,
+                                      style: const TextStyle(color: Colors.white, fontSize: 8.5, fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                            const SizedBox(height: 8),
+                            const SizedBox(height: 6),
                             Text(
-                              cat['name'],
+                              cat['name'] as String,
                               style: TextStyle(
-                                fontSize: 11,
+                                fontSize: 10.5,
                                 fontWeight: isSelected ? FontWeight.bold : FontWeight.w600,
-                                color: isSelected ? const Color(0xFFFF5A36) : Colors.black87,
+                                color: isSelected ? const Color(0xFFFF5A36) : const Color(0xFF1E293B),
                               ),
-                              textAlign: TextAlign.center,
-                              maxLines: 2,
+                              maxLines: 1,
                               overflow: TextOverflow.ellipsis,
+                              textAlign: TextAlign.center,
                             ),
                           ],
                         ),
@@ -719,19 +788,113 @@ class _SharoMainScreenState extends State<SharoMainScreen> {
                     );
                   },
                 ),
+
+                // Special Spotlight Section for "شاڕۆ کڕین" (Shopping & Supermarket)
+                if (selectedCategory == "all" || selectedCategory == "market") ...[
+                  const SizedBox(height: 18),
+                  Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(22),
+                      gradient: const LinearGradient(
+                        colors: [Color(0xFF065F46), Color(0xFF047857)],
+                      ),
+                      boxShadow: [
+                        BoxShadow(color: const Color(0xFF059669).withOpacity(0.25), blurRadius: 12, offset: const Offset(0, 4)),
+                      ],
+                    ),
+                    child: Stack(
+                      children: [
+                        Positioned.fill(
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(22),
+                            child: Image.asset(
+                              'assets/images/shop_market_banner.jpg',
+                              fit: BoxFit.cover,
+                              opacity: const AlwaysStoppedAnimation(0.22),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: Row(
+                            children: [
+                              Container(
+                                width: 68,
+                                height: 68,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(16),
+                                  border: Border.all(color: Colors.white, width: 2),
+                                  boxShadow: [
+                                    BoxShadow(color: Colors.black.withOpacity(0.3), blurRadius: 8),
+                                  ],
+                                ),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(14),
+                                  child: Image.asset(
+                                    'assets/images/cat_market.jpg',
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(width: 14),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                                      decoration: BoxDecoration(
+                                        color: Colors.white.withOpacity(0.2),
+                                        borderRadius: BorderRadius.circular(8),
+                                      ),
+                                      child: const Text('بەشی تایبەتی شاڕۆ کڕین 🛒', style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold)),
+                                    ),
+                                    const SizedBox(height: 4),
+                                    const Text('مارکێت و بازاڕی دەربەندیخان', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15)),
+                                    const SizedBox(height: 2),
+                                    const Text('سەوزە، میوە و کەرەستەی خۆراکی بە گەیاندنی فرێش', style: TextStyle(color: Colors.white70, fontSize: 10.5)),
+                                  ],
+                                ),
+                              ),
+                              ElevatedButton(
+                                onPressed: () {
+                                  setState(() => selectedCategory = "market");
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.white,
+                                  foregroundColor: const Color(0xFF047857),
+                                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                ),
+                                child: const Text('کڕین ئێستا', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 11)),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+
                 const SizedBox(height: 24),
 
                 // Featured Places in Darbandikhan
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text('چێشتخانە و مارکێتە بەردەستەکان', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                    Text(
+                      selectedCategory == "market"
+                          ? 'مارکێت و دوکانەکانی شاڕۆ کڕین'
+                          : (selectedCategory == "fish" ? 'ماسی بەنداوی دەربەندیخان' : 'چێشتخانە و مارکێتە بەردەستەکان'),
+                      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                    ),
                     Text('${filteredShops.length} شوێن لە دەربەندیخان', style: const TextStyle(fontSize: 11, color: Colors.grey)),
                   ],
                 ),
                 const SizedBox(height: 12),
 
-                // Restaurant Cards with Big Eye-Catching Visuals
+                // Visual Shop Cards with Real Banners & Food Previews
                 ListView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
@@ -741,71 +904,131 @@ class _SharoMainScreenState extends State<SharoMainScreen> {
                     return GestureDetector(
                       onTap: () => _showShopDetails(s),
                       child: Container(
-                        margin: const EdgeInsets.only(bottom: 14),
+                        margin: const EdgeInsets.only(bottom: 16),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(22),
                           border: Border.all(color: Colors.grey.shade200),
                           boxShadow: [
-                            BoxShadow(color: Colors.black.withOpacity(0.03), blurRadius: 10, offset: const Offset(0, 4)),
+                            BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 10, offset: const Offset(0, 4)),
                           ],
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            // Header Banner with prominent styling
-                            Container(
-                              height: 110,
-                              decoration: BoxDecoration(
-                                borderRadius: const BorderRadius.vertical(top: Radius.circular(22)),
-                                gradient: LinearGradient(
-                                  colors: s['category'] == 'fish'
-                                      ? [const Color(0xFF0284C7), const Color(0xFF38BDF8)]
-                                      : (s['category'] == 'market'
-                                          ? [const Color(0xFF059669), const Color(0xFF10B981)]
-                                          : [const Color(0xFFFF5A36), const Color(0xFFFF7A00)]),
-                                ),
-                              ),
-                              padding: const EdgeInsets.all(14),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                            // Header Banner Photo with Gradient Overlay
+                            SizedBox(
+                              height: 140,
+                              child: Stack(
                                 children: [
-                                  Row(
-                                    children: [
-                                      Container(
-                                        padding: const EdgeInsets.all(10),
-                                        decoration: BoxDecoration(
-                                          color: Colors.white.withOpacity(0.25),
-                                          borderRadius: BorderRadius.circular(16),
-                                        ),
-                                        child: Icon(s['icon'] as IconData, color: Colors.white, size: 36),
-                                      ),
-                                      const SizedBox(width: 12),
-                                      Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        children: [
-                                          Text(s['name'], style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16)),
-                                          Text(s['location'], style: const TextStyle(color: Colors.white70, fontSize: 11)),
-                                        ],
-                                      ),
-                                    ],
+                                  ClipRRect(
+                                    borderRadius: const BorderRadius.vertical(top: Radius.circular(22)),
+                                    child: Image.asset(
+                                      s['banner'] as String,
+                                      height: 140,
+                                      width: double.infinity,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                   Container(
-                                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                                     decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(14),
+                                      borderRadius: const BorderRadius.vertical(top: Radius.circular(22)),
+                                      gradient: LinearGradient(
+                                        begin: Alignment.bottomCenter,
+                                        end: Alignment.topCenter,
+                                        colors: [
+                                          Colors.black.withOpacity(0.85),
+                                          Colors.black.withOpacity(0.15),
+                                        ],
+                                      ),
                                     ),
-                                    child: Row(
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(12),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        const Icon(Icons.star, color: Colors.amber, size: 14),
-                                        const SizedBox(width: 4),
-                                        Text('${s['rating']}', style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Container(
+                                              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                              decoration: BoxDecoration(
+                                                color: Colors.white.withOpacity(0.92),
+                                                borderRadius: BorderRadius.circular(10),
+                                              ),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.min,
+                                                children: [
+                                                  const Icon(Icons.star, color: Colors.amber, size: 14),
+                                                  const SizedBox(width: 4),
+                                                  Text('${s['rating']}', style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 11)),
+                                                  Text(' (${s['reviews']})', style: const TextStyle(color: Colors.grey, fontSize: 10)),
+                                                ],
+                                              ),
+                                            ),
+                                            Container(
+                                              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                              decoration: BoxDecoration(
+                                                gradient: const LinearGradient(colors: [Color(0xFFFF5A36), Color(0xFFFF7A00)]),
+                                                borderRadius: BorderRadius.circular(10),
+                                              ),
+                                              child: Text(s['featuredTag'] as String, style: const TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold)),
+                                            ),
+                                          ],
+                                        ),
+                                        Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              s['name'] as String,
+                                              style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
+                                            ),
+                                            const SizedBox(height: 2),
+                                            Row(
+                                              children: [
+                                                const Icon(Icons.location_on, color: Colors.white70, size: 12),
+                                                const SizedBox(width: 4),
+                                                Text(s['location'] as String, style: const TextStyle(color: Colors.white70, fontSize: 11)),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
                                       ],
                                     ),
                                   ),
+                                ],
+                              ),
+                            ),
+                            // Quick Food / Product Preview Thumbnails
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(14, 10, 14, 0),
+                              child: Row(
+                                children: [
+                                  for (var item in ((s['menu'] as List<dynamic>?) ?? []).take(3))
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 8),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          ClipRRect(
+                                            borderRadius: BorderRadius.circular(8),
+                                            child: Image.asset(
+                                              item['image'] as String,
+                                              width: 26,
+                                              height: 26,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                          const SizedBox(width: 4),
+                                          Text(
+                                            item['name'].toString().split(' ').take(2).join(' '),
+                                            style: const TextStyle(fontSize: 10.5, color: Color(0xFF475569)),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
                                 ],
                               ),
                             ),
@@ -813,15 +1036,6 @@ class _SharoMainScreenState extends State<SharoMainScreen> {
                               padding: const EdgeInsets.all(14),
                               child: Row(
                                 children: [
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                                    decoration: BoxDecoration(
-                                      color: const Color(0xFFFFF1EE),
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    child: Text('${s['featuredTag']}', style: const TextStyle(color: Color(0xFFFF5A36), fontSize: 11, fontWeight: FontWeight.bold)),
-                                  ),
-                                  const Spacer(),
                                   Row(
                                     children: [
                                       const Icon(Icons.timer_outlined, size: 14, color: Colors.grey),
@@ -829,11 +1043,13 @@ class _SharoMainScreenState extends State<SharoMainScreen> {
                                       Text('${s['eta']} خولەک', style: const TextStyle(fontSize: 12, color: Colors.grey)),
                                     ],
                                   ),
-                                  const SizedBox(width: 12),
+                                  const Spacer(),
                                   Text(
                                     s['fee'] == 0 ? 'گەیاندن خۆڕاییە' : '${s['fee']} د.ع کرێ',
                                     style: const TextStyle(color: Color(0xFFFF5A36), fontWeight: FontWeight.bold, fontSize: 12),
                                   ),
+                                  const SizedBox(width: 8),
+                                  const Icon(Icons.arrow_forward_ios, size: 12, color: Color(0xFFFF5A36)),
                                 ],
                               ),
                             ),
@@ -851,29 +1067,53 @@ class _SharoMainScreenState extends State<SharoMainScreen> {
     );
   }
 
-  Widget _buildPromoCard({required String title, required String desc, required IconData icon, required List<Color> gradient}) {
+  Widget _buildPromoCard({
+    required String title,
+    required String desc,
+    required String image,
+    required String badge,
+    required List<Color> gradient,
+  }) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 4),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        gradient: LinearGradient(colors: gradient),
+        borderRadius: BorderRadius.circular(22),
+        image: DecorationImage(
+          image: AssetImage(image),
+          fit: BoxFit.cover,
+        ),
       ),
-      padding: const EdgeInsets.all(18),
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(title, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15)),
-                const SizedBox(height: 6),
-                Text(desc, style: const TextStyle(color: Colors.white70, fontSize: 11)),
-              ],
-            ),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(22),
+          gradient: LinearGradient(
+            begin: Alignment.bottomCenter,
+            end: Alignment.topCenter,
+            colors: [
+              Colors.black.withOpacity(0.85),
+              Colors.black.withOpacity(0.2),
+            ],
           ),
-          Icon(icon, color: Colors.white.withOpacity(0.85), size: 54),
-        ],
+        ),
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(colors: gradient),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Text(badge, style: const TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold)),
+            ),
+            const SizedBox(height: 6),
+            Text(title, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15)),
+            const SizedBox(height: 3),
+            Text(desc, style: const TextStyle(color: Colors.white70, fontSize: 11)),
+          ],
+        ),
       ),
     );
   }
@@ -915,12 +1155,65 @@ class _SharoMainScreenState extends State<SharoMainScreen> {
             ),
           ),
           const SizedBox(height: 16),
-          Card(
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-            child: const ListTile(
-              leading: Icon(Icons.set_meal, color: Color(0xFFFF5A36)),
-              title: Text('داشکاندنی تایبەتی ماسی بەنداو'),
-              subtitle: Text('هەموو ڕۆژانی هەینی، گەیاندنی ماسی بەنداوی دەربەندیخان بە خۆڕاییە!'),
+          // Visual Offer 1
+          Container(
+            height: 140,
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(18)),
+              image: DecorationImage(
+                image: AssetImage('assets/images/banner_promo_2.jpg'),
+                fit: BoxFit.cover,
+              ),
+            ),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(18),
+                gradient: LinearGradient(
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                  colors: [Colors.black.withOpacity(0.85), Colors.transparent],
+                ),
+              ),
+              padding: const EdgeInsets.all(14),
+              child: const Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('داشکاندنی تایبەتی ماسی بەنداو', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15)),
+                  Text('هەموو ڕۆژانی هەینی، گەیاندنی ماسی بەنداوی دەربەندیخان خۆڕاییە!', style: TextStyle(color: Colors.white70, fontSize: 11)),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 14),
+          // Visual Offer 2
+          Container(
+            height: 140,
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(18)),
+              image: DecorationImage(
+                image: AssetImage('assets/images/banner_promo_3.jpg'),
+                fit: BoxFit.cover,
+              ),
+            ),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(18),
+                gradient: LinearGradient(
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                  colors: [Colors.black.withOpacity(0.85), Colors.transparent],
+                ),
+              ),
+              padding: const EdgeInsets.all(14),
+              child: const Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('شاڕۆ کڕین: گەیاندنی خۆڕایی بۆ یەکەم کڕین', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15)),
+                  Text('کڕینی پێداویستی خۆراکی و میوە لە دەربەندیخان بە گەیاندنی خێرا', style: TextStyle(color: Colors.white70, fontSize: 11)),
+                ],
+              ),
             ),
           ),
         ],
@@ -938,26 +1231,32 @@ class _SharoMainScreenState extends State<SharoMainScreen> {
         padding: const EdgeInsets.all(14),
         children: [
           Container(
-            height: 120,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              gradient: const LinearGradient(colors: [Color(0xFFD97706), Color(0xFFFBBF24)]),
+            height: 130,
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(20)),
+              image: DecorationImage(
+                image: AssetImage('assets/images/cat_taxi.jpg'),
+                fit: BoxFit.cover,
+              ),
             ),
-            padding: const EdgeInsets.all(16),
-            child: const Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('تەکسی و هاتوچۆی دەربەندیخان', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16)),
-                      Text('هاتوچۆ لە نێوان ناو بازاڕ، سەرسیر، بەنداو و زانکۆ', style: TextStyle(color: Colors.white70, fontSize: 11)),
-                    ],
-                  ),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                gradient: LinearGradient(
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                  colors: [Colors.black.withOpacity(0.85), Colors.black.withOpacity(0.2)],
                 ),
-                Icon(Icons.local_taxi, color: Colors.white, size: 50),
-              ],
+              ),
+              padding: const EdgeInsets.all(16),
+              child: const Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('تەکسی و هاتوچۆی دەربەندیخان', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16)),
+                  Text('هاتوچۆ لە نێوان ناو بازاڕ، سەرسیر، بەنداو، زانکۆ و گەڕەکەکان', style: TextStyle(color: Colors.white70, fontSize: 11)),
+                ],
+              ),
             ),
           ),
           const SizedBox(height: 16),
@@ -1070,7 +1369,7 @@ class _SharoMainScreenState extends State<SharoMainScreen> {
                       Icon(Icons.shopping_bag_outlined, size: 72, color: Colors.grey),
                       SizedBox(height: 12),
                       Text('سەبەتەکەت لە دەربەندیخان بەتاڵە', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
-                      Text('خواردن و ماسی بەنداو زیاد بکە بۆ کڕین', style: TextStyle(color: Colors.grey, fontSize: 12)),
+                      Text('خواردن و ماسی بەنداو و کەلوپەلی شاڕۆ کڕین زیاد بکە', style: TextStyle(color: Colors.grey, fontSize: 12)),
                     ],
                   ),
                 ),
@@ -1091,14 +1390,14 @@ class _SharoMainScreenState extends State<SharoMainScreen> {
                       ),
                       child: Row(
                         children: [
-                          Container(
-                            width: 48,
-                            height: 48,
-                            decoration: BoxDecoration(
-                              color: const Color(0xFFFFF1EE),
-                              borderRadius: BorderRadius.circular(12),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(12),
+                            child: Image.asset(
+                              it['image'] as String? ?? 'assets/images/cat_market.jpg',
+                              width: 50,
+                              height: 50,
+                              fit: BoxFit.cover,
                             ),
-                            child: Icon(it['icon'] as IconData? ?? Icons.fastfood, color: const Color(0xFFFF5A36), size: 26),
                           ),
                           const SizedBox(width: 12),
                           Expanded(
@@ -1266,7 +1565,7 @@ class _SharoMainScreenState extends State<SharoMainScreen> {
           Card(
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
             child: const ListTile(
-              leading: Icon(Icons.location_city, color: Color(0xFFFF5A36)),
+              leading: const Icon(Icons.location_city, color: Color(0xFFFF5A36)),
               title: Text('شار و سنوری خزمەتگوزاری'),
               subtitle: Text('دەربەندیخان - هەموو گەڕەکەکان'),
             ),
@@ -1278,7 +1577,7 @@ class _SharoMainScreenState extends State<SharoMainScreen> {
 }
 
 // -------------------------------------------------------------
-// SHOP MODAL
+// SHOP MODAL WITH REAL PHOTOGRAPHY
 // -------------------------------------------------------------
 class SharoShopModal extends StatelessWidget {
   final Map<String, dynamic> shop;
@@ -1299,35 +1598,66 @@ class SharoShopModal extends StatelessWidget {
     final menu = (shop['menu'] as List<dynamic>?) ?? [];
 
     return Container(
-      height: MediaQuery.of(context).size.height * 0.85,
+      height: MediaQuery.of(context).size.height * 0.88,
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
       ),
       child: Column(
         children: [
-          Container(
-            height: 110,
-            decoration: BoxDecoration(
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
-              gradient: LinearGradient(
-                colors: shop['category'] == 'fish'
-                    ? [const Color(0xFF0284C7), const Color(0xFF38BDF8)]
-                    : [const Color(0xFFFF5A36), const Color(0xFFFF7A00)],
-              ),
-            ),
-            padding: const EdgeInsets.all(16),
-            child: Row(
+          // Header with real banner photography
+          SizedBox(
+            height: 130,
+            child: Stack(
               children: [
-                Icon(shop['icon'] as IconData? ?? Icons.restaurant, color: Colors.white, size: 40),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                ClipRRect(
+                  borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
+                  child: Image.asset(
+                    shop['banner'] as String,
+                    height: 130,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
+                    gradient: LinearGradient(
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                      colors: [Colors.black.withOpacity(0.85), Colors.black.withOpacity(0.2)],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Row(
                     children: [
-                      Text(shop['name'], style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 17)),
-                      Text(shop['location'], style: const TextStyle(color: Colors.white70, fontSize: 11)),
+                      Container(
+                        width: 54,
+                        height: 54,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          border: Border.all(color: Colors.white, width: 2),
+                          boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.3), blurRadius: 6)],
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(14),
+                          child: Image.asset(shop['banner'] as String, fit: BoxFit.cover),
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(shop['name'], style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16)),
+                            const SizedBox(height: 2),
+                            Text('${shop['location']} · گەیاندن: ${shop['eta']} خولەک', style: const TextStyle(color: Colors.white70, fontSize: 11)),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -1348,19 +1678,19 @@ class SharoShopModal extends StatelessWidget {
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
                     color: Colors.grey.shade50,
-                    borderRadius: BorderRadius.circular(16),
+                    borderRadius: BorderRadius.circular(18),
                     border: Border.all(color: Colors.grey.shade200),
                   ),
                   child: Row(
                     children: [
-                      Container(
-                        width: 56,
-                        height: 56,
-                        decoration: BoxDecoration(
-                          color: const Color(0xFFFFF1EE),
-                          borderRadius: BorderRadius.circular(14),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(14),
+                        child: Image.asset(
+                          it['image'] as String,
+                          width: 64,
+                          height: 64,
+                          fit: BoxFit.cover,
                         ),
-                        child: Icon(it['icon'] as IconData? ?? Icons.restaurant, color: const Color(0xFFFF5A36), size: 30),
                       ),
                       const SizedBox(width: 14),
                       Expanded(
@@ -1368,28 +1698,29 @@ class SharoShopModal extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(it['name'], style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
-                            Text(it['desc'], style: const TextStyle(fontSize: 10, color: Colors.grey), maxLines: 2),
-                            const SizedBox(height: 4),
-                            Text('${it['price']} د.ع', style: const TextStyle(fontWeight: FontWeight.bold, color: Color(0xFFFF5A36))),
+                            const SizedBox(height: 2),
+                            Text(it['desc'], style: const TextStyle(fontSize: 10.5, color: Colors.grey), maxLines: 2),
+                            const SizedBox(height: 6),
+                            Text('${it['price']} د.ع', style: const TextStyle(fontWeight: FontWeight.bold, color: Color(0xFFFF5A36), fontSize: 12.5)),
                           ],
                         ),
                       ),
                       if (qty == 0)
                         IconButton(
                           onPressed: () => onAddToCart(it),
-                          icon: const Icon(Icons.add_circle, color: Color(0xFFFF5A36), size: 32),
+                          icon: const Icon(Icons.add_circle, color: Color(0xFFFF5A36), size: 34),
                         )
                       else
                         Row(
                           children: [
                             IconButton(
                               onPressed: () => onRemoveFromCart(it['id']),
-                              icon: const Icon(Icons.remove_circle_outline, color: Colors.red, size: 24),
+                              icon: const Icon(Icons.remove_circle_outline, color: Colors.red, size: 22),
                             ),
                             Text('$qty', style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
                             IconButton(
                               onPressed: () => onAddToCart(it),
-                              icon: const Icon(Icons.add_circle, color: Color(0xFFFF5A36), size: 24),
+                              icon: const Icon(Icons.add_circle, color: Color(0xFFFF5A36), size: 22),
                             ),
                           ],
                         ),
