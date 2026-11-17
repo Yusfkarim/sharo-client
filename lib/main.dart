@@ -1565,7 +1565,7 @@ class _SharoMainScreenState extends State<SharoMainScreen> {
           Card(
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
             child: const ListTile(
-              leading: const Icon(Icons.location_city, color: Color(0xFFFF5A36)),
+              leading: Icon(Icons.location_city, color: Color(0xFFFF5A36)),
               title: Text('شار و سنوری خزمەتگوزاری'),
               subtitle: Text('دەربەندیخان - هەموو گەڕەکەکان'),
             ),
